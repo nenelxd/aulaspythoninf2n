@@ -157,3 +157,56 @@
 # while entrada > 10 or entrada < 1:
 #     entrada = int(input("Número inválido, tente novamente: "))
 # print("Você digitou um número válido")
+
+
+
+
+
+############### AULA 1705
+
+# numero = 1
+# total = 0
+
+# while numero <= 100:
+#     total += numero
+#     numero += 1
+# print(f"A soma dos números é {total}")
+
+
+# numero = int(input("Digite um número: "))
+# total = 0
+
+# while total <= 10:
+#     print(f"{numero} x {total} = {numero * total}")
+#     total += 1
+
+################## RESOLVER
+# numero = 15
+# palpite = ''
+# while palpite!=numero:
+#     int(input("Digite um número: "))
+#     if palpite>numero:
+#         print("O número é maior que o escolhido")
+#     elif palpite<numero:
+#         print("O número é menor que o escolhido")
+#     else:
+#         print(f"Você acertou o número é {numero}")
+
+# numero = 15
+# palpite = ''
+# while palpite!=numero:
+#     int(input("Digite um número: "))
+#     if palpite>numero:
+#         print("O número é menor que isso")
+#     elif palpite<numero:
+#         print("O número é maior que isso")
+#     else:
+#         print("Você acertou")
+
+
+# numero = int(input("Digite um número: "))
+# contador = 1
+
+# while contador != numero:
+########################## resolve
+
