@@ -1,0 +1,113 @@
+# # metros = float(input("Digite o valor em metros: "))
+# # cm = metros * 100
+# # print(f"O valor em centímetros é {cm:.0f} cm")
+
+
+# # base = float(input("Digite o valor da base do retângulo(CM): "))
+# # largura = float(input("Digite a altura do retângulo (CM): "))
+# # area = base * largura
+# # print(f"A área do retângulo é {area:.0f} cm")
+
+# # peso = float(input("Digite o peso: "))
+# # altura = float(input("Digite a altura: "))
+
+
+# # imc = peso / (altura ** 2)
+
+# # print(f"O Número de IMC é: {imc:.0f}")
+
+
+# # capini = float(input('Digite o capital inicial: '))
+# # tax_jur = float(input('Digite a taxa de juros: '))
+# # tempo = int(input('Digite o tempo de aplicação: '))
+
+# # juros = capini * tax_jur * tempo
+
+# # ganho = capini + juros
+
+# # print(f'A taxa de juros é de: {ganho:.0f}')
+
+# # nota1 = float(input('Digite a nota 1: '))
+# # nota2 = float(input('Digite a nota 2: '))
+# # nota3 = float(input('Digite a nota 3: '))
+# # nota4 = float(input('Digite a nota 4: '))
+
+# # media = (nota1 + nota2 + nota3 + nota4) / 4
+
+# # if media >= 6:
+# #     print(f"Você está aprovado, sua média é: {media:.1f}")
+# # else:
+# #     print(f'Você está reprovado, sua média é: {media:.1f}')
+
+# ######## TERNARIO: media = 'Aprovado' if media >= 6 else 'Reprovado'
+
+# # preco = float(input('Digite o preço original do produto: '))
+# # desconto = float(input('Digite o percentual de desconto: '))
+
+# # formula = (preco * desconto) / 100
+# # final = preco - formula
+
+# # print(f'O preço final com o desconto de {desconto:.0f}% aplicado é de R$ {final:.0f}')
+
+# # segundos = float(input('Digite o tempo em segundos: '))
+# # minutos = segundos /60
+# # horas = minutos /60
+
+# # print(f"{segundos:.0f} segundos é equivalente a {minutos:.0f} minutos e {horas:.2f} horas")
+
+
+# # celsius = int(input("Digite a temperatura em Celsius: "))
+# # fh = ((celsius * 9)/5) + 32
+
+# # print(f'A temperatura em Fahrenheit é: {fh}')
+
+# # idade = int(input('Digite a idade: '))
+
+# # if idade <= 12:
+# #     print('Você é criança')
+# # elif idade <= 17:
+# #     print('Você é adolescente')
+# # elif idade >= 18 and idade <=60:
+# #     print('Você é adulto')
+# # else:
+# #     print('Você é idoso')
+
+# # login = str(input("Digite o login: "))
+# # senha = str(input("Digite a senha: "))
+
+# # if login == 'admin' and senha == 'root':
+# #     print("Você logou com sucesso")
+# # else:
+# #     print("Senha ou nome de usuario inválidos")
+
+
+# ######LAÇO WHILE
+# # num = 0 
+# # while num < 10:
+# #     print(num)
+# #     num += 1
+# # print(num)
+
+
+# ### laço for
+
+# # for i in range(10):
+# #     print(i)
+
+
+# # for i in reversed(range(10)):
+# #     print(i + 1)
+# # print('Feliz ano novo')
+
+
+# # num = 10
+# # while num > 0:
+# #     print(num)
+# #     num -= 1
+# # print('Feliz ano novo')
+
+# num = int(input("Digite um número: "))
+
+# for i in range(1, 11):
+#     resultado = num * i
+#     print(f'{num} x {i} = {resultado}')
