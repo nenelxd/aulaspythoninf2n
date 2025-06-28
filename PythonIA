@@ -164,3 +164,55 @@ dicionario = {
 print(dicionario['Nota'])
 
 
+# social_name = input('Digite o seu usuário: ')
+# username = input('Digite o nome do seu usuário: ')
+
+# usuários = {  ##Chaves nao podem ser repetidas, chaves são a representação do índice, caso sejam repetidas a ultima sobrescreve a antecessora seja no dicionario maior, ou no dicionario que tem dentro de um dicionario
+#     1: {
+#         'username': 'Ricardo',
+#         'social_name': 'Rick'
+#     },
+#     2: {
+#         'username': 'teste123',
+#         'social_name': 'Teste usuário'
+#     }, 
+#     3: {
+#         'username': 'teste123',
+#         'social_name': 'Teste usuário'
+#     } 
+# }
+
+
+# print(usuários[1]['username']) ## Printa dentro da chave 1 do dicionario, a subchave desejada
+
+# for nome, valor in usuários.items(): ## printar os itens da lista
+#     print(nome, valor)
+
+# # print(usuários['bairro'])
+# print(usuários.get('bairro','Não se aplica')) - Printar um dado presente no dicionario, caso nao exista, printa 'Não se aplica'
+
+# bairro = {'bairro': 'Mooca'} 
+
+# usuários.update(bairro)  - Adiciona ao dicionário, no final
+
+# print(usuários
+
+# listadados = list(usuários)
+
+# for i in usuários.items():
+#     print(i)
+
+
+
+# ### Criando dicionario com input
+
+# dicionario = {}
+
+# nome = input('Digite seu nome: ')
+# idade = int(input('Digite sua idade: '))
+
+# dicionario['nome'] = nome
+# dicionario['idade'] = idade
+
+# for i in dicionario.items():
+#     print(i)
