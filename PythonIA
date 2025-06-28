@@ -93,3 +93,74 @@ sorted(lista)
 for time, media in (lista):
     print(f'O time é {time} e a média é {media:.2f}')
 
+
+    ############
+####### 28/06/2025 #########
+
+
+
+# frutas = 'Maçã', 'Banana', 'Uva', 'Laranja', 'Morango'
+
+# frutas = set(frutas)
+
+# print(frutas)
+
+# print(type(frutas))
+
+# print('Banana' in frutas)
+
+# frutas_vermelhas = {'Morango', 'Cereja', 'Framboesa'}
+
+# print(frutas_vermelhas)
+
+# frutas_vermelhas.remove('Cereja')
+
+# print(frutas_vermelhas)
+
+
+# setA = 'Maça', 'Banana', 'Uva'
+# setB = 'Banana', 'Uva', 'Pera'
+
+# setA = set(setA)
+# setB = set(setB)
+
+# print(setA.intersection(setB))
+
+##### Lista filtrada sem valores repetidos
+
+# lista1 = [1, 2, 3]
+
+# lista2 = [1, 3, 4]
+
+# lista1 = set(lista1)
+
+# lista2 = set(lista2)
+
+# valor_final = lista1 | lista2
+
+# print(valor_final)
+
+
+# #### - Conjuntos (set) podem ser utilizados como fatores de operações matemáticas
+# lista1 = [1, 2, 3, 4]
+# lista2 = [6, 3, 4, 1]
+
+# lista1 = set(lista1)
+# lista2 = set(lista2)
+
+# subtra = lista1 - lista2 ### Exemplo
+
+# print(subtra)
+
+# Dicionario - Hashmap
+
+dicionario = {
+    'Nome' : 'Roberto',
+    'Idade': 22,
+    'Altura': 1.90,
+    'Nota' : 3.43,
+}
+
+print(dicionario['Nota'])
+
+
