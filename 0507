@@ -1,0 +1,176 @@
+#Ex1 Faça um Programa que leia um vetor de 5 números inteiros e mostre-os.
+
+# numeros = (1, 2, 3, 4, 5)
+
+# print(numeros)
+
+#Ex2 Faça um Programa que leia um vetor de 10 números reais e mostre-os na ordem inversa.
+
+# numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+# numeros.reverse()
+
+# print(numeros)
+
+#Ex3 Faça um Programa que leia 4 notas, mostre as notas e a média na tela.
+
+# notas = (6.5, 7.6, 7.8, 9.0)
+
+# print(f'As notas são{notas} e a média é {sum(notas)/len(notas):.2f}')
+
+#Ex4 Faça um Programa que leia um vetor de 10 caracteres, e diga quantas consoantes foram lidas. Imprima as consoantes.
+
+# nome = ('p, a, p, i, b, a, q, u, i, g')
+# consoantes = []
+# contador = 0
+
+# for i in nome:
+#     if i not in ('a, e, i, o, u'):
+#         consoantes.append(i)
+#         contador += 1
+
+
+
+# print(f'As consoantes são:{consoantes} e são ao total {contador} consoantes')
+
+
+
+#Ex 4 Faça um Programa que leia 20 números inteiros e armazene-os num vetor. Armazene os números pares 
+# no vetor PAR e os números IMPARES no vetor impar. Imprima os três vetores.
+
+# numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+# par = []
+# impar = []
+
+# for i in numeros:
+#     if i %2 == 0:
+#         par.append(i)
+#     else:
+#         impar.append(i)
+
+# print(f'Os pares são {par} e os ímpares são {impar}')
+
+
+#Ex 6: Faça um Programa que peça as quatro notas de 10 alunos, calcule e armazene num vetor a média de cada aluno, 
+# imprima o número de alunos com média maior ou igual a 7.0.
+
+# diario = { 'Aluno' :
+#             'Nota bim 1' :
+#             'Nota bim 2' :
+#             'Nota bim 3' :
+#             'Nota bim 4' :           
+# }
+
+# final = []
+
+# for i in range(1, 11, 1):
+#     print(f'Aluno {i}')
+#     notas = [float(input('Digite a nota1: ')), float(input('Digite a nota2: ')), float(input('Digite a nota3: ')), float(input('Digite a nota4: '))]
+#     media = sum(notas) / len(notas)
+#     final.append(media)
+
+# maiores = []
+
+# for i in final:
+#     if i >= 7:
+#         maiores.append(i)
+
+# print(f'A quantidade de alunos que tem a média acima de 7.0 são {len(maiores)}')
+
+
+#Ex7 Faça um Programa que leia um vetor de 5 números inteiros, mostre a soma, a multiplicação e os números.
+
+# numeros = [1, 2, 3, 4, 5]
+# fator = 1
+
+# for i in numeros:
+#     fator = i
+#     i *= fator
+#     print(i)
+#     fator +1
+
+    
+
+# print(f'Soma = {sum(numeros)}, Multiplicação ={} e os números são {numeros})
+
+
+
+
+
+######################################### dicionario
+
+
+# dicionario = {
+#     {
+#         'nome ' : 'Felipe',
+#         'Idade ' : 24,
+#         'Endereço ' : 'Rua das palmeiras',
+#     },
+#     {
+#         'nome ' : 'Felipe',
+#         'Idade ' : 24,
+#         'Endereço ' : 'Rua das palmeiras',
+#     },
+#     {
+#         'nome ' : 'Felipe',
+#         'Idade ' : 24,
+#         'Endereço ' : 'Rua das palmeiras',
+#     },
+# }
+
+# # print(dicionario['User1234204'])
+
+# for item in dicionario:
+#     print(item['nome'])
+# pp = []
+# compras = []
+
+    # pp.append((str(input('Digite o produto: ')), float(input('Digite o preço: '))))
+    # compras.append(pp)
+# listafinal = []
+# listapreço = []
+# while True:
+#     listafinal.append([str(input('Produto: '))])
+#     listapreço.append([str(input('Digite o preço: '))])
+#     if str(input('Deseja continuar? s/n: ')) == 's':
+#         continue
+#     else:
+#         break
+
+
+
+# print(listafinal)
+lista_produtos = []
+
+while True:
+    opcao = int(input('Digite 1 para cadastrar um produto e 2 para exibir: '))
+
+    if opcao == 1:
+        nome = input('Digite o nome do produto: ')
+        valor = float(input('Digite o valor do produto: '))
+
+        produto = {
+            'nome' : nome,
+            'valor' : valor
+        }
+
+        lista_produtos.append(produto)
+    elif opcao == 2:
+        total = 0
+        qtd_produtos = 0
+        produto_barato = ''
+        valor_barato = 0
+
+        for item in lista_produtos:
+            total += item['valor']
+
+            if item['valor'] > 1000:
+                qtd_produtos +=1
+
+            if item['valor'] <= valor_barato or valor_barato == 0:
+                produto_barato = item['nome']
+                valor_barato = item['valor']
+
+        print(produto_barato)
+
