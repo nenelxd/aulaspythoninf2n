@@ -1,0 +1,126 @@
+# lista = []
+
+
+# def cadastrar_nomes(nome: str, idade: int, altura: float) -> str: ### : str type indice (type lock do item para evitar cadastros que não sejam do tipo)
+#     ### DOCUMENTAÇÃO """ (ASPAS TRIPLAS) Cria um conteiner de informação para exibir na hora de chamar a função.
+#     """ 
+#     Parametro: Nome: str
+#     Essa função cadastra nomes
+#     em uma lista
+#     """
+#     lista.append(nome)
+#     return 'Nome cadastrado com sucesso'
+
+
+
+# def bemvindo(nome: str) -> str:
+#     return f'Seja bem vindo {nome}'
+
+# nome = str(input('Digite seu nome '))
+
+# print(bemvindo(nome))
+# ################## FUNÇÃO NÃO PRINTA, FUNÇÃO RETORNA, PRINTA DEPOIS SE QUISER
+# def horarios(hora: float) -> float:
+#     if hora >6 and hora <= 12.00:
+#         return f'Bom dia, são {hora:.2f} horas da manhã'
+#     elif hora > 12 and hora <= 18:
+#         return f'Boa tarde, são {hora:.2f} horas da tarde'
+#     return f'Boa noite, são {hora:.2f} horas da noite'
+    
+# hora = float(input('Digite a hora atual: '))
+
+# print(horarios(hora))
+
+
+
+# def soma(n1: int, n2: int) -> int:
+#     return (n1+n2)
+
+# # n1 = int(input('Digite o numero 1: '))
+# # n2 = int(input('Digite o numero 2: '))
+
+# print(soma(12, 11))
+
+
+# def soma(n1: int, n2: int):
+#     return (n1-n2)
+
+
+# print(soma(12, 11))
+
+### Calculadora
+# def soma(n1: float, n2: float) -> float:
+#     return n1 + n2
+
+# def mult(n1: float, n2: float) -> float:
+#     return n1 * n2
+
+# def sub(n1: float, n2: float) -> float:
+#     return n1 - n2
+
+# def div(n1: float, n2: float) -> float:
+#     return n1 % n2
+
+# while True:
+#     resposta = str(input('Calculadora:  Digite 1 - soma 2 - multiplicação, 3 - subtração, 4 - divisão ou 5 - Sair:      '))
+#     if resposta == '1':
+#         n1 = float(input('Digite um número: '))
+#         n2 = float(input('Digite outro número: '))
+#         print(f'{soma(n1, n2):.0f}')
+#     elif resposta == '2':
+#         n1 = float(input('Digite um número: '))
+#         n2 = float(input('Digite outro número: '))
+#         print(f'{mult(n1, n2):.0f}')
+#     elif resposta == '3':
+#         n1 = float(input('Digite um número: '))
+#         n2 = float(input('Digite outro número: '))
+#         print(f'{sub(n1, n2):.0f}')
+#     elif resposta == '4':
+#         n1 = float(input('Digite um número: '))
+#         n2 = float(input('Digite outro número: '))
+#         print(f'{div(n1, n2):.0f}')
+#     elif resposta == '5':
+#         print('Você fechou a calculadora')
+#         break
+#     else:
+#         print('Digito errado, favor escolha 1 - Soma, 2 - Multiplicação, 3 - Subtração, 4 - Divisão ou 5 - Sair:       ')
+
+
+cadastros = []
+
+
+def usuarios(nome: str, idade: int, endereço: str):
+    item = {'Nome' : nome,
+            'Idade': idade,
+            'Endereço' : endereço}
+    cadastros.append(item)
+    return f'Usuário {nome} cadastrado com sucesso'
+while True:
+    resposta = str(input('Cadastrar novo usuário?: '))
+    if resposta == 'Sim':
+        nome = str(input('Digite seu nome: '))
+        idade = int(input('Digite sua idade: '))
+        endereço = str(input('Digite seu endereço: '))
+        usuarios(nome, idade, endereço)
+    elif resposta == 'Não':
+        break
+    else:
+        print('Digite uma resposta válida, Sim ou Não')
+
+
+print(cadastros)
+
+def padronização(cadastros: list[dict]):
+    for usuario in cadastros:
+        usuario['Nome'] = usuario['Nome'].title()
+        usuario['Endereço'] = usuario['Endereço'].title()
+
+
+# print(cadastros)
+
+# for i in cadastros:
+#     print(i['Nome'])
+
+print(padronização(cadastros))
+
+
