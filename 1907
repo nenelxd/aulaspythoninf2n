@@ -1,0 +1,147 @@
+# lista = []
+
+# def padr_nm_list(nomes: list):
+#     for nome in nomes:
+#         lista.append(nome.title())
+
+# def saud(nome: str) -> str:
+#     return f'Olá {nome}'
+
+
+# padr_nm_list()
+# saud()
+
+
+# def quadrado(numero: int) -> int:
+#     return numero **2
+
+# numero = int(input('Digite um número: '))
+
+# print(quadrado(numero))
+
+# notas = []
+
+# def media(nota1: float, nota2: float,nota3: float) -> float:
+#     notas.append(nota1)
+#     notas.append(nota2)
+#     notas.append(nota3)
+#     return sum(notas)/len(notas)
+        
+
+# nota1 = float(input('Digite uma nota: '))
+# nota2 = float(input('Digite uma nota: '))
+# nota3 = float(input('Digite uma nota: '))
+
+# print(f'{media(nota1, nota2, nota3):.2f}')
+
+
+
+# qnt_alunos = int(input('Digite a qnt de alunos: '))
+# diario = []
+
+# def media(nota: float):
+#         diario.append(nota)
+#         return sum(diario)/len(diario)
+    
+# for i in range(qnt_alunos):
+#         nota = float(input('Digite a nota: '))
+
+# print(media(nota))
+
+
+####################################### ERRO def calcular_media(*args):
+#     media = sum(args) /len(args)
+#     return media
+
+# fix = []
+
+# for i in range(3):
+#     fix.append(int(input('Digite um número: ')))
+
+# fix = tuple()
+
+
+# print(calcular_media(fix))
+
+########################################
+
+# def teste_kwargs(**kwargs):
+#     return kwargs
+
+# roberto = {'Nome': str(input('Digite o seu nome:')),
+#            'Trabalho': str(input('Digite o seu trabalho: ')), 
+#            'Casa' : str(input('Digite onde você mora: ')) 
+#            }
+
+# print(teste_kwargs(Lista_de_dados=roberto))
+
+
+# ff = 'Int'
+# dd = 'ff'
+
+# print(ff+dd)
+
+
+
+# def concate_str(*args: str):
+#     palavra = ''
+#     for letra in args:
+#         palavra += letra
+    
+#     return palavra
+
+
+# print(concate_str('Tub', 'S', 'D'))
+
+
+# quadrado = lambda x: x**2
+# maiusculo = lambda nome: nome.upper()
+
+# par_impar = lambda numero: 'Par' if numero %2 == 0 else 'impar'
+
+# print(par_impar(10))
+
+# print(par_impar(2))
+
+
+# lista = [10, 9, 8, 6, 5]
+
+# lista_padronizada = list(map(lambda x: x**2, lista))
+
+# lista_nomes = ['felipe', 'adriano', 'tiago', 'chico']
+
+# lista_padronizada_nomes = list(map(lambda x: x.title(), lista_nomes))
+
+# print(lista_padronizada_nomes)
+
+
+# lista_nomes = ['felipe', 'adriano', 'tiago', 'chico']
+
+# lista_corrigida = []
+
+# for nome in lista_nomes:
+#     nome = nome.title()
+#     lista_corrigida.append(nome)
+
+# print(lista_corrigida)
+
+#### TENTAR CONTINUAR 
+
+# #Receber nomes e idades e dizer quantas pessoas são maiores e quantas são menores
+# pessoas = []
+# idades = []
+
+# for i in range(3):
+#     pessoas.append(str(input('Digite um nome: ')))
+#     idades.append(int(input('Digite uma idade: ')))
+
+# demaior = []
+# demenor = []
+# nomes = []
+
+# idades_tratadas = list(map(lambda x: demaior.append(x) if x >= 18 else demenor.append(x), idades))
+# nomes_tratados = list(map(lambda nome: nomes.append(nome.title()), pessoas))
+
+# print(demaior)
+# print(demenor)
+# print(nomes)
