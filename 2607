@@ -1,0 +1,111 @@
+# qnt_tarefas = int(input('Quantas tarefas você deseja adicionar? '))
+
+# lista_tarefas = []
+# tarefas = {'Nome' : 'Nome da tarefa',
+#            'Descriaçao' : "descrição_tarefa",
+#            'prori' : "priori_tarefa",
+#            'categoria' : 'categoria'
+#     }
+
+
+# nm_tarefa = str(input('Digite o nome da tarefa: '))
+# pr_tarefa = int(input('Digite a prioridade (1 a 5): '))
+# ds_tarefa = str(input('Digite a descrição da atividade: '))
+# ct_tarefa = str(input('Digite a categoria: '))
+# def add_tarefa():
+#     tarefas['Nome'] = nm_tarefa
+#     tarefas['Descriaçao'] = ds_tarefa
+#     tarefas['prori'] = pr_tarefa
+#     tarefas['categoria'] = ct_tarefa
+#     lista_tarefas.append(tarefas)
+    
+
+# print(lista_tarefas)
+
+
+
+##---------------------------------------------------------------------------------------------------------------------------
+# lista_tarefas = []
+# tarefa = {'Nome': 'nome_da_tarefa',
+#           'Descrição': 'descrição_tarefa',
+#           'Prioridade': 'prioridade_tarefa',
+#           'categoria': 'categoria_tarefa'}
+
+# def adc_tarefa(nome_tarefa: str,descricao_tarefa:str, prioridade_tarefa:int,categoria_tarefa:int):
+#     tarefa = {}
+#     tarefa['nome'] = nome_tarefa
+#     tarefa['descrição'] = descricao_tarefa
+#     tarefa['Prioridade'] = prioridade_tarefa
+#     tarefa['Categoria'] = categoria_tarefa
+#     tarefa['Situação'] = False
+#     lista_tarefas.append(tarefa)
+
+
+
+# nm_tarefa = str(input('Digite o nome da tarefa: '))
+# print('''
+# 1 - Baixa
+# 2 - Média
+# 3 - Alta
+# ''')
+# pr_tarefa = int(input('Digite a prioridade (1 a 3): '))
+# ds_tarefa = str(input('Digite a descrição da atividade: '))
+# print('''
+# 1 - Profissional
+# 2 - Pessoal
+# 3 - Financeiro
+# ''')
+
+# ct_tarefa = int(input('Digite a categoria: '))
+
+
+# adc_tarefa(nm_tarefa, ds_tarefa, pr_tarefa, ct_tarefa)
+
+
+
+def mostrar_tarefas(lista_de_tarefas:list):
+    for tarefa in lista_de_tarefas:
+        print(f'Tarefa: {tarefa['Nome']}')
+        print(f'Descrição: {tarefa['Descrição']}')
+        print(f'Prioridade: {tarefa['Prioridade']}')
+        print(f'Categoria: {tarefa['categoria']}')
+        print(f'Concluída?: {tarefa['situação']}')
+        print('-'*40)
+
+lista_tarefas = [ {'Nome': 'nome_da_tarefa',
+          'Descrição': 'descrição_tarefa',
+          'Prioridade': 'prioridade_tarefa',
+          'categoria': 'categoria_tarefa',
+          'situação': False},
+          
+          {'Nome': 'ssss',
+          'Descrição': 'dssssss',
+          'Prioridade': 'ssssss',
+          'categoria': 'sssssa',
+          'situação': False},
+          
+          
+          {'Nome': 'nddddddd',
+          'Descrição': 'ddddda',
+          'Prioridade': 'ddddda',
+          'categoria': 'dddddda',
+          'situação': False}          
+          ]
+
+mostrar_tarefas(lista_tarefas)
+
+
+
+# pedir = input('Digite o nome da tarefa desejada: ')
+
+def ticar_tarefa(lista_de_tarefas:list):
+    for indice, valor in enumerate(lista_de_tarefas):
+        print(f'{indice} - {valor}')
+    concluir = int(input('Qual tarefa deseja concluir: '))
+    for indice, valor in enumerate(lista_de_tarefas):
+        if concluir == indice:
+            valor['situação'] = True
+
+ticar_tarefa(lista_tarefas)
+
+mostrar_tarefas(lista_tarefas)
