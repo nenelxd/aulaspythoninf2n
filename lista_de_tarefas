@@ -1,0 +1,390 @@
+# qnt_tarefas = int(input('Quantas tarefas você deseja adicionar? '))
+
+# lista_tarefas = []
+# tarefas = {'Nome' : 'Nome da tarefa',
+#            'Descriaçao' : "descrição_tarefa",
+#            'prori' : "priori_tarefa",
+#            'categoria' : 'categoria'
+#     }
+
+
+# nm_tarefa = str(input('Digite o nome da tarefa: '))
+# pr_tarefa = int(input('Digite a prioridade (1 a 5): '))
+# ds_tarefa = str(input('Digite a descrição da atividade: '))
+# ct_tarefa = str(input('Digite a categoria: '))
+# def add_tarefa():
+#     tarefas['Nome'] = nm_tarefa
+#     tarefas['Descriaçao'] = ds_tarefa
+#     tarefas['prori'] = pr_tarefa
+#     tarefas['categoria'] = ct_tarefa
+#     lista_tarefas.append(tarefas)
+    
+
+# print(lista_tarefas)
+
+
+
+##---------------------------------------------------------------------------------------------------------------------------
+lista_tarefas = [] #### Lista global de tarefas 
+tarefa = {'nome': 'nome_da_tarefa',   
+          'descrição': 'descrição_tarefa',
+          'prioridade': 'prioridade_tarefa',
+          'categoria': 'categoria_tarefa'}    #### Modelo de tarefa a ser adicionada
+
+def adc_tarefa(nome_tarefa: str,descricao_tarefa:str, prioridade_tarefa:int,categoria_tarefa:int):
+    tarefa = {}
+    tarefa['nome'] = nome_tarefa
+    tarefa['descrição'] = descricao_tarefa
+    tarefa['prioridade'] = prioridade_tarefa
+    tarefa['categoria'] = categoria_tarefa
+    tarefa['situação'] = False
+    lista_tarefas.append(tarefa)
+
+def mostrar_tarefas(lista_de_tarefas:list):
+    for tarefa in lista_de_tarefas:
+        return tarefa
+
+def ticar_tarefa(lista_de_tarefas:list):
+    # for tarefa in enumerate(lista_tarefas):
+    #         print(f'Tarefa: {tarefa['nome']}')
+    #         print(f'Concluída?: {tarefa['situação']}')
+    #         print('-'*40)
+    for indice, tarefa in enumerate(lista_de_tarefas):
+        if concluir == indice:
+            tarefa['situação'] = True
+            # return tarefa
+
+# def ticar_tarefa(lista_de_tarefas:list):
+#     for indice, valor in enumerate(lista_de_tarefas):
+#         print(f'{indice} - {valor}')
+#     concluir = int(input('Qual tarefa deseja concluir: '))
+#     for indice, valor in enumerate(lista_de_tarefas):
+#         if concluir == indice:
+#             valor['situação'] = True
+
+def por_prioridade(lista_de_tarefas:list):
+    for tarefa in lista_de_tarefas:
+        if tarefa['prioridade'] == rank_prioridade:
+            return tarefa
+
+def por_categoria(lista_de_tarefas:list):
+    for tarefa in lista_de_tarefas:
+        if tarefa['categoria'] == rank_categoria:
+            return tarefa
+
+
+
+while True:
+    print('''
+          Bem vindo a lista de tarefas.
+          
+          Digite a opção desejada de acordo com o menu abaixo:
+          
+          1 - Adicionar Tarefa
+          2 - Mostrar as tarefas
+          3 - Concluir tarefas
+          4 - Filtrar por prioridade
+          5 - Filtrar por categoria
+          6 - Sair e mostra a lista final
+          ''')
+    resposta_menu = input('Digite a opção escolhida: ')
+    print('-'*40)
+    
+    if resposta_menu == '1':
+        nm_tarefa = str(input('Digite o nome da tarefa: '))
+        print('''
+        1 - Baixa
+        2 - Média
+        3 - Alta
+        ''')
+        pr_tarefa = input('Digite a prioridade (1 a 3): ')
+        while pr_tarefa not in ('1', '2', '3'):
+            print('''
+            1 - Baixa
+            2 - Média
+            3 - Alta
+            ''')
+            pr_tarefa = input('Digite a prioridade (1 a 3): ')
+        ds_tarefa = str(input('Digite a descrição da atividade: '))
+        print('''
+        1 - Profissional 
+        2 - Pessoal
+        3 - Financeiro
+        ''')
+        ct_tarefa = input('Digite a categoria: ')
+        while ct_tarefa not in ('1', '2', '3'):
+            print('''
+            1 - Profissional 
+            2 - Pessoal
+            3 - Financeiro
+            ''')
+            ct_tarefa = input('Digite a categoria: ')
+        
+        adc_tarefa(nm_tarefa, ds_tarefa, pr_tarefa, ct_tarefa)
+   
+    elif resposta_menu == '2':
+        if len(lista_tarefas)==0:
+            print('Você ainda não cadastrou nenhuma tarefa.')
+        else:
+            mostrar_tarefas(lista_tarefas)
+            for tarefa in lista_tarefas:
+                print(f'Tarefa: {tarefa['nome']}')
+
+                print(f'Descrição: {tarefa['descrição']}')
+
+                if tarefa['prioridade'] == '1':
+                    print(f'Prioridade: Baixa')
+                elif tarefa['prioridade'] == '2':
+                    print(f'Prioridade: Média')
+                elif tarefa['prioridade'] == '3':
+                    print(f'Prioridade: Alta')
+
+                if tarefa['categoria'] == '1':
+                    print(f'Categoria: Profissional')
+                elif tarefa['categoria'] == '2':
+                    print(f'Categoria: Pessoal')
+                elif tarefa['categoria'] == '3':
+                    print(f'Categoria: Financeiro')
+
+                if tarefa['situação'] == False:
+                    print(f'Concluída?: Não concluida')
+                elif tarefa['situação'] == True:
+                    print(f'Concluída?: Concluida')
+                
+                print('-'*40)
+    
+    elif resposta_menu == '3':
+        
+        if len(lista_tarefas)==0:
+            print('Você ainda não cadastrou nenhuma tarefa.')
+        
+        else:
+
+            
+
+            for indice, tarefa in enumerate(lista_tarefas):
+                print(f'Número da tarefa: {indice}')
+                print(f'Tarefa: {tarefa['nome']}')
+                if tarefa['situação'] == False:
+                    print(f'Concluída?: Não concluida')
+                elif tarefa['situação'] == True:
+                    print(f'Concluída?: Concluida')
+                print('-'*40)
+            
+            concluir = int(input('Digite o numero da tarefa que deseja sinalizar como concluída: '))
+
+            while concluir != indice:
+                concluir = int(input('Tarefa inválida. Digite o número da tarefa que deseja sinalizar como concluída: '))
+            
+            ticar_tarefa(lista_tarefas)
+
+            for indice, tarefa in enumerate(lista_tarefas):
+                if concluir == indice:
+                    print(f'Você marcou a tarefa {tarefa['nome']} como concluída.')
+            
+            print('-'*40)
+
+   
+    elif resposta_menu == '4':
+        if len(lista_tarefas)==0:
+            print('Você ainda não cadastrou nenhuma tarefa.')
+        else:
+            print('''
+            1 - Baixa
+            2 - Média
+            3 - Alta
+            ''')
+            rank_prioridade = input('Deseja filtrar por qual prioridade?: ')
+
+            while rank_prioridade not in ('1' , '2', '3'):
+                print('''
+                1 - Baixa
+                2 - Média
+                3 - Alta
+                ''')
+                rank_prioridade = input('Digite uma opção válida: ')
+
+            por_prioridade(lista_tarefas)
+
+            for tarefa in lista_tarefas:
+                if tarefa['prioridade'] == rank_prioridade:
+                    print(f'Tarefa: {tarefa['nome']}')
+
+                    print(f'Descrição: {tarefa['descrição']}')
+
+                    if tarefa['prioridade'] == '1':
+                        print(f'Prioridade: Baixa')
+                    elif tarefa['prioridade'] == '2':
+                        print(f'Prioridade: Média')
+                    elif tarefa['prioridade'] == '3':
+                        print(f'Prioridade: Alta')
+
+                    if tarefa['categoria'] == '1':
+                        print(f'Categoria: Profissional')
+                    elif tarefa['categoria'] == '2':
+                        print(f'Categoria: Pessoal')
+                    elif tarefa['categoria'] == '3':
+                        print(f'Categoria: Financeiro')
+
+                    if tarefa['situação'] == False:
+                        print(f'Concluída?: Não concluida')
+                    elif tarefa['situação'] == True:
+                        print(f'Concluída?: Concluida')
+                    
+                    print('-'*40)
+
+            if rank_prioridade not in tarefa['prioridade']:
+                print('Não existem tarefas cadastradas com essa prioridade')
+                
+    
+    elif resposta_menu == '5':
+        if len(lista_tarefas)==0:
+            print('Você ainda não cadastrou nenhuma tarefa.')
+        else:
+            print('''
+            1 - Profissional
+            2 - Pessoal
+            3 - Financeiro
+            ''')
+            rank_categoria = input('Deseja rankear por qual categoria?: ')
+
+            while rank_categoria not in ('1', '2', '3'):
+                print('''
+                1 - Profissional
+                2 - Pessoal
+                3 - Financeiro
+                ''')
+                rank_categoria = input('Digite uma categoria válida: ')
+
+            por_categoria(lista_tarefas)
+
+            for tarefa in lista_tarefas:
+                if tarefa['categoria'] == rank_categoria:
+                    print(f'Tarefa: {tarefa['nome']}')
+
+                    print(f'Descrição: {tarefa['descrição']}')
+
+                    if tarefa['prioridade'] == '1':
+                        print(f'Prioridade: Baixa')
+                    elif tarefa['prioridade'] == '2':
+                        print(f'Prioridade: Média')
+                    elif tarefa['prioridade'] == '3':
+                        print(f'Prioridade: Alta')
+
+                    if tarefa['categoria'] == '1':
+                        print(f'Categoria: Profissional')
+                    elif tarefa['categoria'] == '2':
+                        print(f'Categoria: Pessoal')
+                    elif tarefa['categoria'] == '3':
+                        print(f'Categoria: Financeiro')
+
+                    if tarefa['situação'] == False:
+                        print(f'Concluída?: Não concluida')
+                    elif tarefa['situação'] == True:
+                        print(f'Concluída?: Concluida')
+                    
+                    print('-'*40)
+
+    elif resposta_menu == '6':
+        if len(lista_tarefas) >= 1:
+            print('Lista fechada com sucesso, sua lista final é:')
+
+            mostrar_tarefas(lista_tarefas)
+
+            for tarefa in lista_tarefas:
+                print(f'Tarefa: {tarefa['nome']}')
+
+                print(f'Descrição: {tarefa['descrição']}')
+
+                if tarefa['prioridade'] == '1':
+                    print(f'Prioridade: Baixa')
+                elif tarefa['prioridade'] == '2':
+                    print(f'Prioridade: Média')
+                elif tarefa['prioridade'] == '3':
+                    print(f'Prioridade: Alta')
+
+                if tarefa['categoria'] == '1':
+                    print(f'Categoria: Profissional')
+                elif tarefa['categoria'] == '2':
+                    print(f'Categoria: Pessoal')
+                elif tarefa['categoria'] == '3':
+                    print(f'Categoria: Financeiro')
+
+                if tarefa['situação'] == False:
+                    print(f'Concluída?: Não concluida')
+                elif tarefa['situação'] == True:
+                    print(f'Concluída?: Concluida')
+                
+                print('-'*40)
+
+        else:
+            print('Você não cadastrou nenhum produto, sua lista terminou zerada.')
+        break
+    else:
+        print('Você deve escolher uma resposta válida.')
+
+
+
+# def mostrar_tarefas(lista_de_tarefas:list):
+#     for tarefa in lista_de_tarefas:
+#         print(f'Tarefa: {tarefa['Nome']}')
+#         print(f'Descrição: {tarefa['Descrição']}')
+#         print(f'Prioridade: {tarefa['Prioridade']}')
+#         print(f'Categoria: {tarefa['ategoria']}')
+#         print(f'Concluída?: {tarefa['situação']}')
+#         print('-'*40)
+
+# lista_tarefas = [ {'Nome': 'nome_da_tarefa',
+#           'Descrição': 'descrição_tarefa',
+#           'Prioridade': 2,
+#           'Categoria': 3,
+#           'situação': False},
+          
+#           {'Nome': 'ssss',
+#           'Descrição': 'dssssss',
+#           'Prioridade': 1,
+#           'Categoria': 3,
+#           'situação': False},
+          
+          
+#           {'Nome': 'nddddddd',
+#           'Descrição': 'ddddda',
+#           'Prioridade': 1,
+#           'Categoria': 2,
+#           'situação': False}          
+#           ]
+
+# mostrar_tarefas(lista_tarefas)
+
+
+
+# pedir = input('Digite o nome da tarefa desejada: ')
+
+# def ticar_tarefa(lista_de_tarefas:list):
+#     for indice, valor in enumerate(lista_de_tarefas):
+#         print(f'{indice} - {valor}')
+#     concluir = int(input('Qual tarefa deseja concluir: '))
+#     for indice, valor in enumerate(lista_de_tarefas):
+#         if concluir == indice:
+#             valor['situação'] = True
+
+# ticar_tarefa(lista_tarefas)
+
+# mostrar_tarefas(lista_tarefas)
+
+# rank_prioridade = int(input('Deseja rankear por qual prioridade? (1 - Baixa, 2 - Média, 3 - Alta): '))
+# def por_prioridade(lista_de_tarefas:list):
+#     for tarefa in lista_de_tarefas:
+#         if tarefa['Prioridade'] == rank_prioridade:
+#             print(tarefa)
+
+# por_prioridade(lista_tarefas)
+
+
+# rank_categoria = int(input('Deseja rankear por qual categoria? (1 - Profissional, 2 - Pessoal, 3 - Financeiro): '))
+# def por_categoria(lista_de_tarefas:list):
+#     for tarefa in lista_de_tarefas:
+#         if tarefa['Categoria'] == rank_categoria:
+#             print(tarefa)
+
+# por_categoria(lista_tarefas)
