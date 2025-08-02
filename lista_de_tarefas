@@ -1,30 +1,4 @@
-# qnt_tarefas = int(input('Quantas tarefas você deseja adicionar? '))
 
-# lista_tarefas = []
-# tarefas = {'Nome' : 'Nome da tarefa',
-#            'Descriaçao' : "descrição_tarefa",
-#            'prori' : "priori_tarefa",
-#            'categoria' : 'categoria'
-#     }
-
-
-# nm_tarefa = str(input('Digite o nome da tarefa: '))
-# pr_tarefa = int(input('Digite a prioridade (1 a 5): '))
-# ds_tarefa = str(input('Digite a descrição da atividade: '))
-# ct_tarefa = str(input('Digite a categoria: '))
-# def add_tarefa():
-#     tarefas['Nome'] = nm_tarefa
-#     tarefas['Descriaçao'] = ds_tarefa
-#     tarefas['prori'] = pr_tarefa
-#     tarefas['categoria'] = ct_tarefa
-#     lista_tarefas.append(tarefas)
-    
-
-# print(lista_tarefas)
-
-
-
-##---------------------------------------------------------------------------------------------------------------------------
 lista_tarefas = [] #### Lista global de tarefas 
 tarefa = {'nome': 'nome_da_tarefa',   
           'descrição': 'descrição_tarefa',
@@ -40,39 +14,24 @@ def adc_tarefa(nome_tarefa: str,descricao_tarefa:str, prioridade_tarefa:int,cate
     tarefa['situação'] = False
     lista_tarefas.append(tarefa)
 
-def mostrar_tarefas(lista_de_tarefas:list):
+def mostrar_tarefas(lista_de_tarefas:list): ## Função mostrar tarefas
     for tarefa in lista_de_tarefas:
         return tarefa
 
-def ticar_tarefa(lista_de_tarefas:list):
-    # for tarefa in enumerate(lista_tarefas):
-    #         print(f'Tarefa: {tarefa['nome']}')
-    #         print(f'Concluída?: {tarefa['situação']}')
-    #         print('-'*40)
+def ticar_tarefa(lista_de_tarefas:list): ## Função concluir tarefas
     for indice, tarefa in enumerate(lista_de_tarefas):
         if concluir == indice:
             tarefa['situação'] = True
-            # return tarefa
 
-# def ticar_tarefa(lista_de_tarefas:list):
-#     for indice, valor in enumerate(lista_de_tarefas):
-#         print(f'{indice} - {valor}')
-#     concluir = int(input('Qual tarefa deseja concluir: '))
-#     for indice, valor in enumerate(lista_de_tarefas):
-#         if concluir == indice:
-#             valor['situação'] = True
-
-def por_prioridade(lista_de_tarefas:list):
+def por_prioridade(lista_de_tarefas:list): ## Função filtrar por prioridade
     for tarefa in lista_de_tarefas:
         if tarefa['prioridade'] == rank_prioridade:
             return tarefa
 
-def por_categoria(lista_de_tarefas:list):
+def por_categoria(lista_de_tarefas:list): ## Função filtrar por categoria
     for tarefa in lista_de_tarefas:
         if tarefa['categoria'] == rank_categoria:
             return tarefa
-
-
 
 while True:
     print('''
@@ -322,69 +281,3 @@ while True:
         break
     else:
         print('Você deve escolher uma resposta válida.')
-
-
-
-# def mostrar_tarefas(lista_de_tarefas:list):
-#     for tarefa in lista_de_tarefas:
-#         print(f'Tarefa: {tarefa['Nome']}')
-#         print(f'Descrição: {tarefa['Descrição']}')
-#         print(f'Prioridade: {tarefa['Prioridade']}')
-#         print(f'Categoria: {tarefa['ategoria']}')
-#         print(f'Concluída?: {tarefa['situação']}')
-#         print('-'*40)
-
-# lista_tarefas = [ {'Nome': 'nome_da_tarefa',
-#           'Descrição': 'descrição_tarefa',
-#           'Prioridade': 2,
-#           'Categoria': 3,
-#           'situação': False},
-          
-#           {'Nome': 'ssss',
-#           'Descrição': 'dssssss',
-#           'Prioridade': 1,
-#           'Categoria': 3,
-#           'situação': False},
-          
-          
-#           {'Nome': 'nddddddd',
-#           'Descrição': 'ddddda',
-#           'Prioridade': 1,
-#           'Categoria': 2,
-#           'situação': False}          
-#           ]
-
-# mostrar_tarefas(lista_tarefas)
-
-
-
-# pedir = input('Digite o nome da tarefa desejada: ')
-
-# def ticar_tarefa(lista_de_tarefas:list):
-#     for indice, valor in enumerate(lista_de_tarefas):
-#         print(f'{indice} - {valor}')
-#     concluir = int(input('Qual tarefa deseja concluir: '))
-#     for indice, valor in enumerate(lista_de_tarefas):
-#         if concluir == indice:
-#             valor['situação'] = True
-
-# ticar_tarefa(lista_tarefas)
-
-# mostrar_tarefas(lista_tarefas)
-
-# rank_prioridade = int(input('Deseja rankear por qual prioridade? (1 - Baixa, 2 - Média, 3 - Alta): '))
-# def por_prioridade(lista_de_tarefas:list):
-#     for tarefa in lista_de_tarefas:
-#         if tarefa['Prioridade'] == rank_prioridade:
-#             print(tarefa)
-
-# por_prioridade(lista_tarefas)
-
-
-# rank_categoria = int(input('Deseja rankear por qual categoria? (1 - Profissional, 2 - Pessoal, 3 - Financeiro): '))
-# def por_categoria(lista_de_tarefas:list):
-#     for tarefa in lista_de_tarefas:
-#         if tarefa['Categoria'] == rank_categoria:
-#             print(tarefa)
-
-# por_categoria(lista_tarefas)
