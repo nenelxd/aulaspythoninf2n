@@ -5,7 +5,7 @@ tarefa = {'nome': 'nome_da_tarefa',
           'prioridade': 'prioridade_tarefa',
           'categoria': 'categoria_tarefa'}    #### Modelo de tarefa a ser adicionada
 
-def adc_tarefa(nome_tarefa: str,descricao_tarefa:str, prioridade_tarefa:int,categoria_tarefa:int):
+def adc_tarefa(nome_tarefa: str,descricao_tarefa:str, prioridade_tarefa:int,categoria_tarefa:int): ## Função adicionar tarefas
     tarefa = {}
     tarefa['nome'] = nome_tarefa
     tarefa['descrição'] = descricao_tarefa
@@ -106,9 +106,9 @@ while True:
                     print(f'Categoria: Financeiro')
 
                 if tarefa['situação'] == False:
-                    print(f'Concluída?: Não concluida')
+                    print(f'Concluída?: Não concluída')
                 elif tarefa['situação'] == True:
-                    print(f'Concluída?: Concluida')
+                    print(f'Concluída?: Concluída')
                 
                 print('-'*40)
     
@@ -125,9 +125,9 @@ while True:
                 print(f'Número da tarefa: {indice}')
                 print(f'Tarefa: {tarefa['nome']}')
                 if tarefa['situação'] == False:
-                    print(f'Concluída?: Não concluida')
+                    print(f'Concluída?: Não concluída')
                 elif tarefa['situação'] == True:
-                    print(f'Concluída?: Concluida')
+                    print(f'Concluída?: Concluída')
                 print('-'*40)
             
             concluir = int(input('Digite o numero da tarefa que deseja sinalizar como concluída: '))
@@ -186,9 +186,9 @@ while True:
                         print(f'Categoria: Financeiro')
 
                     if tarefa['situação'] == False:
-                        print(f'Concluída?: Não concluida')
+                        print(f'Concluída?: Não concluída')
                     elif tarefa['situação'] == True:
-                        print(f'Concluída?: Concluida')
+                        print(f'Concluída?: Concluída')
                     
                     print('-'*40)
 
@@ -238,9 +238,9 @@ while True:
                         print(f'Categoria: Financeiro')
 
                     if tarefa['situação'] == False:
-                        print(f'Concluída?: Não concluida')
+                        print(f'Concluída?: Não concluída')
                     elif tarefa['situação'] == True:
-                        print(f'Concluída?: Concluida')
+                        print(f'Concluída?: Concluída')
                     
                     print('-'*40)
 
@@ -270,9 +270,9 @@ while True:
                     print(f'Categoria: Financeiro')
 
                 if tarefa['situação'] == False:
-                    print(f'Concluída?: Não concluida')
+                    print(f'Concluída?: Não concluída')
                 elif tarefa['situação'] == True:
-                    print(f'Concluída?: Concluida')
+                    print(f'Concluída?: Concluída')
                 
                 print('-'*40)
 
