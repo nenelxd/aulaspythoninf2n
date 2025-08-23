@@ -1,0 +1,78 @@
+# import flet as ft
+
+
+# def main(page: ft.Page):
+#     page.title = 'Aplicação flet, aula 2'
+
+#     tema = ft.Theme(
+#         color_scheme=ft.ColorScheme(
+#             primary=ft.Colors.RED
+#         ),
+#         # elevated_button_theme=ft.ButtonTheme.color_scheme
+#     )
+
+#     page.theme = tema
+    
+#     page.add(
+
+#         #atvd 2
+#         ft.ElevatedButton(text='Click', bgcolor=ft.Colors.BLACK, color=ft.Colors.RED_900, height=40, width=500, url='google.com', style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=1))),
+#         ft.ElevatedButton(text='Click', bgcolor=ft.Colors.BLACK, color=ft.Colors.RED_900, height=40, width=500, url='google.com', style=ft.ButtonStyle(shape=ft.BeveledRectangleBorder(radius=15))),
+#         ft.ElevatedButton(text='Click', bgcolor=ft.Colors.BLACK, color=ft.Colors.RED_900, height=40, width=500, url='google.com', style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=1)))
+
+
+#         # ft.Text('Pokemons da Era 1', text_align=ft.TextAlign.CENTER, weight='bold', bgcolor=ft.Colors.DEEP_PURPLE_ACCENT_100, size=100),
+#         # ft.Text('Charmander', text_align=ft.TextAlign.START, weight=ft.FontWeight.W_100, bgcolor=ft.Colors.ORANGE_800, color=ft.Colors.BLACK),
+#         # ft.Text('Bulbasaur', text_align='center', weight=ft.FontWeight.W_400, bgcolor=ft.Colors.GREEN_400, color=ft.Colors.BLACK),
+#         # ft.Text('Squirtle', text_align='center', weight=ft.FontWeight.W_900, bgcolor=ft.Colors.BLUE_400, color=ft.Colors.BLACK),
+
+#         # ft.ElevatedButton(text='FECHADO',color=ft.Colors.BLACK38, bgcolor=ft.Colors.RED_400,width=400, height=200, style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=0))),
+#         # ft.ElevatedButton(text='ATENÇÃO',color=ft.Colors.BLACK, bgcolor=ft.Colors.YELLOW_400,width=400, height=200, style=ft.ButtonStyle(shape=ft.BeveledRectangleBorder(radius=10))),
+#         # ft.ElevatedButton(text='ABERTO',color=ft.Colors.BLACK, bgcolor=ft.Colors.GREEN_400,width=400, height=200, style=ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=5)))
+#     )
+
+# ft.app(target=main)
+
+
+# def main(page: ft.Page):
+#     page.title = 'Aplicação flet, aula 2'
+
+#     tema = ft.Theme(
+#         color_scheme=ft.ColorScheme(
+#             primary=ft.Colors.RED
+#         ),
+#         # elevated_button_theme=ft.ButtonTheme.color_scheme
+#     )
+
+#     page.theme = tema
+    
+#     page.add()
+
+
+
+
+import flet as ft
+
+
+def main(page: ft.Page):
+    # def btn_click(e):
+    #     if not txt_name.value:
+    #         txt_name.error_text = "Please enter your name"
+    #         page.update()
+    #     else:
+    #         name = txt_name.value
+    #         page.clean()
+    #         page.add(ft.Text(f"Hello, {name}!"))
+    page.add(
+        ft.TextField(label="Seu nome", color=ft.Colors.DEEP_PURPLE_ACCENT_400),
+        ft.TextField(label='Email'),
+        ft.TextField(label='Senha', password=True),
+        ft.ElevatedButton(text='Enviar', bgcolor=ft.Colors.RED_400, color=ft.Colors.BLACK,)
+    )
+
+    # page.add(txt_name)
+    # page.add(txt_email)
+    # page.add(botao_envio)
+
+
+ft.app(main)
