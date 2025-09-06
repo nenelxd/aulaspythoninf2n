@@ -1,0 +1,107 @@
+# # class Pessoa:
+# #     def __init__(self, nome, idade):
+# #         self.nome = nome
+# #         self.idade = idade
+
+# # class Jogador(Pessoa):
+# #     def __init__(self, nome, idade):
+# #         super().__init__(nome, idade)
+
+
+# # class Goleiro(A):
+
+
+# class Forma:
+#     def __init__(self, base, altura):
+#         self.base = base
+#         self.altura = altura
+
+    
+# class Retangulo(Forma):
+#     def __init__(self, base, altura):
+#         super().__init__(base, altura)
+    
+#     def calcular_area(self):
+#         area = self.altura * self.base
+#         return area
+    
+#     def calcular_perimetro(self):
+#         perimetro = self.altura*2 + self.base*2
+#         return perimetro
+    
+# class Circulo(Forma):
+#     def __init__(self, base, altura):
+#         super().__init__(base, altura)
+
+#     def calcular_area(self):
+#        area = 2*(self.base/2)**2*3.14
+#        return area
+    
+#     def calcular_perimetro(self):
+#         perimetro = 2*3.14*(self.base/2)
+#         return perimetro
+    
+# retangulo = Retangulo(8, 16)
+# print(retangulo.calcular_area())
+# print(retangulo.calcular_perimetro())
+
+# circulo = Circulo(7,7)
+# print(circulo.calcular_area())
+# print(circulo.calcular_perimetro())
+
+        
+        
+
+# class Veiculo():
+#     def __init__(self, cor, modelo, n_rodas):
+#         self.cor = cor
+#         self.modelo = modelo
+#         self.n_rodas = n_rodas
+    
+#     def mudar_cor(self, nova_cor):
+#         self.cor = nova_cor
+    
+#     def mudar_rodas(self, nova_roda):
+#         self.n_rodas = nova_roda
+
+
+# class Bicicleta(Veiculo):
+#     def __init__(self, cor, modelo, n_rodas):
+#         super().__init__(cor, modelo, n_rodas)
+
+# class Carro(Veiculo):
+#     def __init__(self, cor, modelo, n_rodas):
+#         super().__init__(cor, modelo, n_rodas)
+
+
+
+# bicicleta1 = Bicicleta('Preto', 'Caloi', 2)
+
+# print(bicicleta1.cor)
+
+# bicicleta1.mudar_cor('Azul')
+
+# print(bicicleta1.cor)
+
+
+
+class Calculadora():
+    def __init__(self, entrada1, entrada2):
+        self.entrada1 = entrada1
+        self.entrada2 = entrada2
+
+    def somar(self):
+        soma = self.entrada1 + self.entrada2
+        return soma
+
+    
+class Calculadora2(Calculadora):
+    def __init__(self, entrada1, entrada2):
+        super().__init__(entrada1, entrada2)
+
+    def somar(self):
+        return super().somar()
+    
+
+calcular = Calculadora2(1, 2)
+
