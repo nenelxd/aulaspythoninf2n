@@ -143,3 +143,126 @@ c2 = Conta_Poupanca(
 # print(c2.__dict__)
 
 
+
+############# ATT 0609
+
+
+
+# class Carro:
+#      def __init__(self, qtd_portas: int, cor: str, modelo: str, ano: int):
+#           self.qtd_portas = qtd_portas
+#           self.cor = cor
+#           self.modelo = modelo
+#           self.ano = ano
+        
+
+# carro1 = Carro(4, 'Azul', 'Uno', 2005)
+
+
+# # print(carro1.cor)
+
+
+class Pessoa:
+    def __init__(self, nome: str, sobrenome: str,rg: int, cpf: int,ano_nasc: int, profissão: str, endereço: str, renda_mensal: float, negativado: bool):
+        self.nome = nome
+        self.sobrenome = sobrenome
+        self.rg = rg
+        self.cpf = cpf
+        self.ano_nasc = ano_nasc
+        self.profissão = profissão
+        self.endereço = endereço
+        self.renda_mensal = renda_mensal
+        self.negativado = negativado
+
+
+    def falar(self, texto: str):
+        return texto
+
+
+# ricardo = Pessoa(
+#     'Ricardo',
+#     'Martins Oliveira',
+#     4545415422,
+#     18445745844,
+#     1995,
+#     'Marceneiro',
+#     'Rua das Oliveiras - 182',
+#     2520.50,
+#     False
+# )
+
+
+
+
+# print(f'''Nome: {ricardo.nome}
+#       CPF: {ricardo.cpf}
+#       RG: {ricardo.rg}
+#       Ano Nasc: {ricardo.ano_nasc}
+#       Profissão: {ricardo.profissão}
+#       Endereço: {ricardo.endereço}
+#       Renda Mensal: R${ricardo.renda_mensal}
+#       ''')
+# if ricardo.negativado == False:
+#     print('Negativado: Não')
+# elif ricardo.negativado == True:
+#     print('Negativado: Sim')
+
+class Conta(Pessoa):
+    def __init__(self, nome, sobrenome, rg, cpf, ano_nasc, profissão, endereço, renda_mensal, negativado, numero_conta, numero_agencia, saldo, ):
+        super().__init__(nome, sobrenome, rg, cpf, ano_nasc, profissão, endereço, renda_mensal, negativado)
+        self.numero_conta = numero_conta
+        self.numero_agencia = numero_agencia
+        self.saldo = saldo
+
+    
+    def add_saldo(self, qtd_depositada: float):
+        self.saldo += qtd_depositada
+
+
+    def sacar(self, valor):
+        if self.saldo >= valor:
+            self.saldo -= valor
+        else:
+            return 'Saldo Insuficiente para saque'
+        
+    def transferir(self, valor:float, conta):
+        if self.saldo >= valor:
+            self.saldo -= valor
+            conta.saldo += valor
+        else:
+            return 'Saldo insuficiente'
+
+
+class Conta_Corrente(Conta):
+    def __init__(self, nome, sobrenome, rg, cpf, ano_nasc, profissão, endereço, renda_mensal, negativado, numero_conta, numero_agencia, saldo):
+        super().__init__(nome, sobrenome, rg, cpf, ano_nasc, profissão, endereço, renda_mensal, negativado, numero_conta, numero_agencia, saldo)
+        self.credito = 0
+
+    
+    def add_credito(self, qtd_paga: float):
+        self.credito += qtd_paga
+            
+
+class Conta_Poupanca(Conta):
+    def __init__(self, nome, sobrenome, rg, cpf, ano_nasc, profissão, endereço, renda_mensal, negativado, numero_conta, numero_agencia, saldo):
+        super().__init__(nome, sobrenome, rg, cpf, ano_nasc, profissão, endereço, renda_mensal, negativado, numero_conta, numero_agencia, saldo)
+        self.saldo = 0
+
+
+emmanuel = Conta_Corrente('Emmanuel',
+               'Amaral Lemos',
+               65485454,
+               41515661,
+               1995,
+               'Vendedor',
+               'Rua das Palmeiras',
+               2000,
+               True,
+               98484454,
+               445548.2,
+               1000)
+
+
+print(emmanuel.__dict__)
+
+
