@@ -1,0 +1,96 @@
+class Pessoa:
+    def __init__(self, nome_completo, data_nascimento, cpf):
+        self.nome_completo = nome_completo
+        self.data_nascimento = data_nascimento
+        self.cpf = cpf
+
+class Conta(Pessoa):
+    def __init__(self, nome_completo, data_nascimento, cpf, bandeira_cartao, inst_finan):
+        super().__init__(nome_completo, data_nascimento, cpf)
+        self.bandeira_cartao = bandeira_cartao
+        self.inst_finan = inst_finan
+
+class Transferencia:
+    def __init__(self, conta_origem: int, conta_destino: int, valor: float):
+        self.conta_origem = conta_origem
+        self.conta_destino = conta_destino
+        self.valor = valor
+
+class ContaCorrente(Conta):
+    def __init__(self, nome_completo, data_nascimento, cpf, bandeira_cartao, inst_finan, agencia, numero):
+        super().__init__(nome_completo, data_nascimento, cpf, bandeira_cartao, inst_finan)
+        self.agencia = agencia
+        self.numero = numero
+        self.__saldo = 0
+        self.credito = 0
+        self.transferencias: list[Transferencia] = []
+
+    @property
+    def saldo(self):
+        return self.__saldo
+        
+    @saldo.setter
+    def saldo(self, novo_saldo):
+        self.__saldo = novo_saldo
+
+    def transferir(self, valor:float, conta:Conta):
+        if self.saldo >= valor:
+            self.saldo -= valor
+            conta.saldo += valor
+            transferencia = Transferencia(self.numero, conta.numero, valor)
+            self.transferencias.append(transferencia)
+        else:
+            print('Saldo insuficiente')
+    
+    def exibir_transferencias(self):
+        for transferencia in self.transferencias:
+            print(f'Origem: {transferencia.conta_origem}')
+            print(f'Destino: {transferencia.conta_destino}')
+            print(f'Valor: {transferencia.valor}')
+            print('-'*40)
+
+    def add_saldo(self, qtd_depositada: float):
+        self.saldo += qtd_depositada
+
+
+    def sacar(self, valor):
+        if self.saldo >= valor:
+            self.saldo -= valor
+        else:
+            return 'Saldo Insuficiente para saque'
+        
+
+    
+class ContaPoupança(Conta):
+    def __init__(self, nome_completo, data_nascimento, cpf, bandeira_cartao, inst_finan, agencia, numero):
+        super().__init__(nome_completo, data_nascimento, cpf, bandeira_cartao, inst_finan)
+        self.agencia = agencia
+        self.numero = numero
+        self.__saldo = 0
+
+    @property
+    def saldo(self):
+        return self.__saldo
+    
+    @saldo.setter
+    def saldo(self, novo_valor):
+        self.__saldo = novo_valor
+
+
+c1 = ContaCorrente('Roberto', '05/10/2000', 1231231223, 'Visa', 'Santander', 3322, 1233334)
+
+c2 = ContaCorrente('Sddd', '10/10/2022', 223123123, 'MASTER','ELO', 123123, 314234)
+
+
+c1.add_saldo(10000)
+
+c1.transferir(50, c2)
+c1.transferir(50, c2)
+c1.transferir(250, c2)
+c1.transferir(350, c2)
+
+print(c1.__dict__)
+
+
+c1.exibir_transferencias()
+
